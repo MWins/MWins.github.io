@@ -1,2 +1,2 @@
-MWins.github.io
+MWins
 ===============
