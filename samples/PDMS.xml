@@ -1,0 +1,103 @@
+
+<?xml-stylesheet href="modern.css"
+  title="Modern" media="screen"
+  type="text/css"?>
+
+<project>
+
+<project_name>Project Management System Specification </project_name>
+<header>
+<summary>
+<title>Goal</title>
+Create an application that applies 3 different project management methodologies to the UI for a project management data model. 
+</summary>
+</header>
+<info>
+
+<h3>Profit Center </h3>
+<p>
+Once completed, project can be listed for sale. It will have a shelf life and require support for product life cycle. Limit to email support if possible or automated systems.
+Can incorporate online backup and be transitioned into a SaaS with additional features with the client being a purchase option. 
+</p>
+</info>
+
+<info>
+<h3>General</h3>
+<p>
+Can be ran under the Agenda6 site as a business venture.  Will have to use personal security but can present the productivity software under its brand with the least disadvantage. Which should update the A6 project plan (but it's out of place here!)
+</p>
+</info>
+
+<section display_text="Meta Data" >
+<title>Project Data </title>
+<ul>
+<li>Start Date : 8:01 PM 12/17/2013</li>
+<li>Target Date : Jan 14th, 2014</li>
+<li><version>Version 0.0.0 </version></li>
+<li>Project Model : AGILE</li>
+<li>Cycle Base : Week</li>
+<li>Cycles : 4</li>
+
+</ul>
+</section>
+<section display_text="Sections (rename)" >
+<title> Systems</title>
+<ul> 
+<li>User </li>
+<li>Project Data Entry UI</li>
+<li>Admin Settings</li>
+<li>Routing</li>
+<li>Template</li>
+<li>Design</li>
+<li>Wireframe</li>
+<li>Data Model (decide if database or xml storage)</li>
+<li>Output ( HTML only with minor white label elements (logo only?))</li>
+</ul>
+</section>
+
+<tasks display_text="Task List">
+<title> Tasks </title>
+<ul>
+<li ><priority>Setup Build Process with libraries and required tools for generating style guide,documentation.</priority> </li>
+<li>Build project data model</li>
+<li> Construct Workflow <a href="http://71.59.58.45/_DEV/DOC_BUILD/projects/ten-forms/outline.php"> View</a></li>
+<li>select user sub-system</li>
+<li>required roles</li>
+<li>template selection</li>
+<li>User Testing</li>
+<li>Browser support</li>
+<li>Branding</li>
+<li>Default template (use framework? bootstrap gives 3 possible theme variations from bootswatch.com)</li>
+<li>use XML to alter the UI ? might require some type of mapping.</li>
+<li> Packaged for distribution </li>
+<li> Demo Screenshots and Sales Description will be required.</li>
+</ul>
+</tasks>
+<section> 
+<title>Media</title>
+</section>
+<section> 
+<title>Files</title>
+</section>
+
+<section> 
+<title>Logins/URLs</title>
+</section>
+
+<section> 
+<title>Project Members/Email </title>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</project>
