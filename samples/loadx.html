@@ -17,18 +17,8 @@ function loadAddresses()
 
 function writeList()
 {
-  
-  var xmlText = new XMLSerializer().serializeToString(xmlDoc);
-var xmlTextNode = document.createTextNode(xmlText);
-  
   xmlString = (new XMLSerializer()).serializeToString(xmlDoc);
-  
-  
-  
   document.getElementById('editor').value =  xmlString;
-  
-  
-  
   
   var labels = xmlDoc.getElementsByTagName('label');
   var ol = document.createElement('OL');
