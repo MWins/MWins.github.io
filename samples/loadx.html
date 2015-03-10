@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+    <title>Address book</title>
+    <script type="application/javascript">
+var ELEMENT_NODE = 1
+//TEXT_NODE
+
+function loadAddresses()
+{
+  xmlDoc = document.implementation.createDocument("", "", null);
+  xmlDoc.onload = writeList;
+  xmlDoc.load("labels.xml");
+}
+
+function writeList()
+{
+  var labels = xmlDoc.getElementsByTagName('label');
+  var ol = document.createElement('OL');
+
+  for (i=0; i < labels.length; i++)
+  {
+    var li = document.createElement('LI');
+    for (j=0; j < labels[i].childNodes.length; j++)
+    {
+      if (labels[i].childNodes[j].nodeType != ELEMENT_NODE) continue;
+      var cdata = document.createTextNode(
+        labels[i].childNodes[j].firstChild.nodeValue);
+      li.appendChild(cdata);
+    }
+    var labelId = document.createTextNode('(' +
+      labels[i].getAttribute('id') + ')');
+    li.appendChild(labelId);
+    ol.appendChild(li);
+  }
+  document.getElementById('updateTarget').appendChild(ol);
+}
+    </script>
+  </head>
+  <body id='updateTarget'>
+    <p>
+      <a href="javascript:loadAddresses()">Click here to load addresses</a>
+    </p>
+    
+    
+    <script>
+  xmlDoc = document.implementation.createDocument("", "", null);
+    xmlDoc.onload = writeList2;
+  xmlDoc.load("labels.xml");
+
+    
+    
+function writeList2()
+{
+    var test = xmlDoc.documentElement.nodeName;
+    
+    alert( test);
+}
+    </script>
+    
+    
+    
+    
+  </body>
+</html>
