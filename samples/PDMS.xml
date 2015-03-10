@@ -2,7 +2,9 @@
 <?xml-stylesheet href="modern.css"
   title="Modern" media="screen"
   type="text/css"?>
-
+<script xmlns="http://www.w3.org/1999/xhtml"><![CDATA[
+alert('Hello');
+]]></script>
 <project>
 
 <project_name>Project Management System Specification </project_name>
