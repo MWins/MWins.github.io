@@ -44,21 +44,7 @@ function writeList()
       <a href="javascript:loadAddresses()">Click here to load addresses</a>
     </p>
     
-    
-    <script>
-  xmlDoc = document.implementation.createDocument("", "", null);
-    xmlDoc.onload = writeList2;
-  xmlDoc.load("labels.xml");
 
-    
-    
-function writeList2()
-{
-    var test = xmlDoc.documentElement.nodeName;
-    
-    alert( test);
-}
-    </script>
     
     
     
