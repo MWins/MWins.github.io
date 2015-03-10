@@ -17,6 +17,19 @@ function loadAddresses()
 
 function writeList()
 {
+  
+  var xmlText = new XMLSerializer().serializeToString(xmlDoc);
+var xmlTextNode = document.createTextNode(xmlText);
+  
+  
+  
+  
+  
+  document.getElementById('editor').value =  xmlTextNode;
+  
+  
+  
+  
   var labels = xmlDoc.getElementsByTagName('label');
   var ol = document.createElement('OL');
 
@@ -44,7 +57,7 @@ function writeList()
       <a href="javascript:loadAddresses()">Click here to load addresses</a>
     </p>
     
-
+<textarea id="editor"></textarea>
     
     
     
