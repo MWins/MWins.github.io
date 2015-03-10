@@ -21,11 +21,11 @@ function writeList()
   var xmlText = new XMLSerializer().serializeToString(xmlDoc);
 var xmlTextNode = document.createTextNode(xmlText);
   
+  xmlString = (new XMLSerializer()).serializeToString(xmlDoc);
   
   
   
-  
-  document.getElementById('editor').value =  xmlTextNode.text;
+  document.getElementById('editor').value =  xmlString;
   
   
   
