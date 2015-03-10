@@ -6,6 +6,7 @@
 @import 'reset.css';
 
 /* Typography */
+h3 { font-size: 18px; line-height: 20px; }
 
 /* Layout */
 
