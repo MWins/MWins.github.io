@@ -7,7 +7,7 @@
 
 /* Typography */
 body { font-family: sans-serif; }
-h3 { font-size: 26px; line-height: 20px; margin: 1em;}
+h3 { font-size: 26px; line-height: 20px; margin: .3em;}
 
 /* Layout */
 .page 
@@ -23,7 +23,7 @@ h3 { font-size: 26px; line-height: 20px; margin: 1em;}
   overflow:hidden;
   height: 100%;
   margin: 0;
-  padding-top: 1em;
+  padding-top: .5em;
   
   
   
@@ -34,7 +34,7 @@ h3 { font-size: 26px; line-height: 20px; margin: 1em;}
   display: block;
   overflow:hidden;
   height: 100%;
-  padding-top: 2em;
+  padding-top: 3em;
   
 }
 .secondary nav { min-height: 80%; }
