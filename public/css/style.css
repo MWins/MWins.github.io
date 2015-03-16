@@ -24,9 +24,11 @@ h3 { font-size: 26px; line-height: 20px; margin: 1em;}
   
   
 }
-.secondary {
+.col + .secondary {
   width: 30%;
   border-right: 1px solid rgba(0,50,150,.4);
+  display: block;
+  overflow:hidden;
   
 }
 .box 
