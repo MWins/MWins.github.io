@@ -34,7 +34,7 @@ h3 { font-size: 26px; line-height: 20px; margin: .3em;}
   display: block;
   overflow:hidden;
   height: 100%;
-  padding-top: 3em;
+  padding-top: 3em;  min-width: 20%; max-width: 20%;
   
 }
 .box 
