@@ -12,12 +12,26 @@ h3 { font-size: 26px; line-height: 20px; margin: 1em;}
 /* Layout */
 .page 
 {
-  width: 80%; margin: 1em auto; 
+  width: 80%; margin: 1em auto; overflow:hidden;
+}
+.col {
+ 
+  float:left;
+  display: block;
+  overflow:hidden;
+  height: 100%;
+  
+  
+  
+}
+.secondary {
+  width: 30%;
+  border-right: 1px solid rgba(0,50,150,.4);
+  
 }
 .box 
 {
   width: 48%;
-  float:left;
   overflow:hidden;
   margin: 3px;
   
