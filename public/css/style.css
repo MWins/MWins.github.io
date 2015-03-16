@@ -34,6 +34,7 @@ h3 { font-size: 26px; line-height: 20px; margin: 1em;}
   height: 100%;
   
 }
+.secondary nav { min-height: 80%; }
 .box 
 {
   width: 48%;
