@@ -1,0 +1,430 @@
+<HTML>
+<HEAD>
+<TITLE>
+CSS cascade test 
+</TITLE>
+
+<LINK REL=stylesheet TYPE="text/css">
+<STYLE>
+<!--
+DIV  { color :  red }
+P.one { color : blue }
+P.two { color : green }
+B.one { color : orange }
+B.two { color : yellow }
+I.one { decoration : italic }
+TABLE  { border-style :solid; border-color : blue ;
+	border-left-width: 1 ; border-left-color: red;
+	border-left-style: solid; border-width : 25 ;
+	border-right-color: red; border-right-style: solid;
+	float: left;
+	}
+
+.ext  { border-style : solid; border-color : red ;
+	border-left-width: 25 ; border-left-color: blue;
+	border-left-style: solid; border-right-width : 25 ;
+	border-right-color: blue; border-right-style: solid;
+	float: none; border-top-color: red;
+	}
+
+.int  { border-style : solid; border-color : GRAY ;
+	border-left-width: 25 ; border-left-color: yellow;
+	border-left-style: solid; border-width : 25 ;
+	border-right-color: yellow; border-right-style: solid;
+	float: none; border-top-color: black;
+	border-bottom-color: orange;
+	}
+
+.ext2  { border-style : solid; border-color : black ;
+	border-left-width: 25 ; border-left-color: black;
+	border-left-style: solid; border-width : 25 ;
+	border-right-color: black; border-right-style: solid;
+	float: none;
+	}
+.time { border-style :solid; border-color : RED ;}
+
+-->
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV>
+HTBB == Have To Be Bored :)
+	Before the P tag class one....
+<P class="one"> 
+	Line one prints .....
+</P>
+<br>	 ok the P.one is at color blue, default DIV has color red...
+<BR>
+<TABLE CLASS="ext" cellspacing=0 cellpadding=0 
+	<TR>
+		<TD>
+<TABLE> 
+	<TR>
+		<TD>
+<B class="one">This is B.one,orange</B>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+<B class="two">This is B.two, yellow</B> 
+		</TD>
+	</TR>
+</TABLE>
+		</TD>
+	</TR>
+</TABLE>
+
+
+<!-- End OF First table -->
+<BR>
+<P>
+
+<TABLE CLASS="ext" cellspacing=0 cellpadding=0 width=100% bgcolor=green>
+	<TR>
+		<TD>
+<TABLE class="int" cellspacing=0 cellpadding=0 width=100%> 
+	<TR>
+		<TD>
+<TABLE class="int" width=100% > 
+	<TR>
+		<TD>
+<TABLE class="int" cellspacing=0 cellpadding=0 width=100%> 
+	<TR>
+		<TD>
+&nbsp;
+<TABLE class="int" cellspacing=0 cellpadding=0 width=100%> 
+	<TR>
+		<TD>
+&nbsp;
+<TABLE class="int" cellspacing=0 cellpadding=0 width=100%> 
+	<TR>
+		<TD>
+&nbsp;
+		
+
+		</TD>
+	</TR>
+</TABLE>		
+<TABLE class="int" cellspacing=0 cellpadding=0 width=100%> 
+	<TR>
+		<TD>
+&nbsp;
+		
+
+		</TD>
+	</TR>
+</TABLE>
+	<TABLE class="int" cellspacing=0 cellpadding=0 width=100%> 
+	<TR>
+		<TD>
+&nbsp;
+		
+
+		</TD>
+	</TR>
+</TABLE>
+
+		</TD>
+	</TR>
+</TABLE>		
+
+		</TD>
+	</TR>
+</TABLE>
+		</TD>
+	</TR>
+</TABLE>
+		</TD>
+	</TR>
+
+</TABLE>
+		</TD>
+	</TR>
+
+</TABLE>
+</P>
+
+
+<!-- End OF Second table -->
+<BR>
+<P>
+
+<TABLE CLASS="ext" cellspacing=0 cellpadding=0 >
+	<TR>
+		<TD>
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+<TABLE class="int" width=100% > 
+	<TR>
+		<TD>
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+&nbsp;
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+&nbsp;
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+&nbsp;
+		
+
+		</TD>
+	</TR>
+</TABLE>		
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+&nbsp;
+		
+
+		</TD>
+	</TR>
+</TABLE>
+	<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+&nbsp;
+		
+
+		</TD>
+	</TR>
+</TABLE>
+
+		</TD>
+	</TR>
+</TABLE>		
+
+		</TD>
+	</TR>
+</TABLE>
+		</TD>
+	</TR>
+</TABLE>
+		</TD>
+	</TR>
+
+</TABLE>
+		</TD>
+	</TR>
+
+</TABLE>
+</P>
+
+
+<!-- End OF Third table -->
+<!-- End OF Third table -->
+
+
+
+
+
+<!-- End OF Third table -->
+<!-- End OF Third table -->
+<BR>
+<P>
+
+<TABLE CLASS="ext2" cellspacing=0 cellpadding=0 WIDTH=20 HEIGHT=100>
+	<TR>
+		<TD>
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+
+		
+		
+		
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+
+		
+			
+		
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+
+
+
+
+
+&nbsp;<HR width=40 color="white" size="20" noshade>
+
+
+
+
+
+
+		</TD>
+	</TR>
+</TABLE>		
+		</TD>
+	</TR>
+</TABLE>		
+
+		</TD>
+	</TR>
+</TABLE>		
+		</TD>
+	</TR>
+</TABLE>
+&nbsp;
+		</TD>
+	</TR>
+</TABLE>		
+&nbsp;
+		</TD>
+	</TR>
+</TABLE>
+		</TD>
+	</TR>
+</TABLE>
+		</TD>
+	</TR>
+
+</TABLE>
+		</TD>
+	</TR>
+
+</TABLE>
+</P>
+
+<!-- End OF Fourth table -->
+<!-- End OF Fourth table -->
+
+
+
+
+
+<!-- End OF Fourth table -->
+<!-- End OF Fourth table -->
+<BR>
+<P>
+
+<TABLE CLASS="ext2" cellspacing=0 cellpadding=0 WIDTH=20 HEIGHT=100>
+	<TR>
+		<TD>
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+<TABLE class="int" width=100% > 
+	<TR>
+		<TD>
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+
+		
+		
+		
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+
+		
+			
+		
+<TABLE class="int" cellspacing=0 cellpadding=0 > 
+	<TR>
+		<TD>
+
+
+<TABLE class="time" bordercolor="red" border=1 cellspacing=0 cellpadding=0 > 
+	<TR bordercolor="red">
+		<TD bordercolor="red" bgcolor="red">
+
+
+
+
+
+<HR width="10" color="red"  size="40">
+
+
+
+		</TD>
+	</TR>
+</TABLE>		
+
+
+		</TD>
+	</TR>
+</TABLE>		
+		</TD>
+	</TR>
+</TABLE>		
+
+		</TD>
+	</TR>
+</TABLE>		
+		</TD>
+	</TR>
+</TABLE>
+
+		</TD>
+	</TR>
+</TABLE>		
+
+		</TD>
+	</TR>
+</TABLE>
+		</TD>
+	</TR>
+</TABLE>
+		</TD>
+	</TR>
+
+</TABLE>
+		</TD>
+	</TR>
+
+</TABLE>
+</P>
+
+<BR>
+	this is an attempt at P.two but odds are it wont take...
+<BR>
+<P class="two"> 
+	Or it will take but
+ <I>	default colors 
+</I>	green now? or is it red?
+</P>
+</DIV>
+<BR>
+	Text after to this current color
+<HR>
+	chart of colors and tags
+ <BR>
+<PRE>
+DIV  { color :  red }
+P.one { color : blue }
+P.two { color : green }
+B.one { color : orange }
+B.two { color : yellow }
+</PRE>
