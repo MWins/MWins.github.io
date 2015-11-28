@@ -81,7 +81,7 @@ section { margin: .5em; padding: .3em 0;  overflow:hidden;     }
 ul li { margin: .4em; list-style:none;}
 
 section blockquote p { margin: .4em; padding: .4em;  }
-section blockquote { background: rgba(0,255,255,.3) ; }
+section blockquote { background: rgba(255,255,0,.13) ; }
 /* Forms */
 
 /* Media Queries */ 
