@@ -1,6 +1,7 @@
 <?xml version='1.0'?>
 <xsl:stylesheet   version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
        <xsl:output method="html" indent="yes"/>
+<xsl:template match="dl">
   <html>
       
       <head><title>Glossary XML</title>
@@ -19,7 +20,6 @@ dd::after { width: 100%; clear:both; }
       <body>
             <h2> XML - XSL Glossary Example </h2>
 <dl>    
-<xsl:template match="dl">
 
 
       <xsl:for-each select="di" >
@@ -29,7 +29,7 @@ dd::after { width: 100%; clear:both; }
 
       </xsl:for-each>
 </dl>
-</xsl:template>
 </body>
 </html>
+</xsl:template>
 </xsl:stylesheet>
