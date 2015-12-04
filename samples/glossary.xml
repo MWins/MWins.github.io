@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="glossary.xsl"?>
+<root>
+    <dl>
+        <di>
+            <dt>DNS</dt>
+            <dd> Domain Name System</dd>
+        </di>
+        <di>
+            <dt>HTML</dt>
+            <dd>HyperText Markup Language</dd>
+        </di>
+        <di>
+            <dt>URL</dt>
+            <dd> Uniform Resource Locator</dd>
+        </di>
+        <di>
+            <dt>URI</dt>
+            <dd> Uniform Resource Identifier</dd>
+        </di>
+
+    <di><dt>FTP</dt><dd>File Transfer Protocol</dd></di><di><dt>SQL</dt><dd>Structured Query Language</dd></di></dl>
+
+</root>
