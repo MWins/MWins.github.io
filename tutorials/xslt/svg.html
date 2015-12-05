@@ -1,0 +1,86 @@
+<!DOCTYPE html >
+<html>
+<head>
+<title> Introl to XLST </title>
+<link href="/public/tutorial-style.css" media="all" rel="stylesheet" >
+</head>
+<body>
+<h1> MWins </h1>
+<hr>
+
+
+
+<h2 id="using-xslt-to-generate-a-svg">Using XSLT to generate a SVG</h2>
+<p>SVG (Scalable Vector Graphics) is an XML based markup language used to generate images. This step doesn’t require an extensive knowledge of SVG to understand. To start, we need a source XML file.</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;?xml-stylesheet href=&quot;zero.xsl&quot; type=&quot;text/xsl&quot; ?&gt;
+&lt;object&gt;
+  &lt;height&gt;150&lt;/height&gt;
+  &lt;width&gt;100&lt;/width&gt;
+&lt;/object&gt;</code></pre>
+<p>To output SVG it is required to modify the doctype generated. The XSLT document is a bit different.</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+ 
+&lt;xsl:stylesheet version=&quot;2.0&quot; 
+        xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+        xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        &gt;
+  &lt;xsl:output
+      method=&quot;xml&quot;
+      indent=&quot;yes&quot;
+      standalone=&quot;no&quot;
+      doctype-public=&quot;-//W3C//DTD SVG 1.1//EN&quot;
+      doctype-system=&quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;
+      media-type=&quot;image/svg&quot; /&gt;
+ 
+  &lt;xsl:template match=&quot;object&quot;&gt;
+    &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;200&quot; height=&quot;200&quot; &gt;
+      &lt;rect x=&quot;10&quot; y=&quot;10&quot; width=&quot;{width}&quot; 
+        height=&quot;{height}&quot; fill=&quot;red&quot; stroke=&quot;black&quot;/&gt;  
+    &lt;/svg&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</code></pre>
+<p>The xsl namespace is declared. The SVG namespace is set. The output of the XSL document is set to xml and the doctype is set to SVG. The media-type corresponds to the mime type. The document then processes the XML file starting with <code>object</code>. Note that we can assign attribute values using curly braces with the name of the child elements without the use of the dollar sign like for variables.</p>
+<p>To create a basic bar chart, we would use the for-each element.</p>
+<pre><code>&lt;data&gt;
+    &lt;item&gt;15&lt;/item&gt;
+    &lt;item&gt;10&lt;/item&gt;
+    &lt;item&gt;5&lt;/item&gt;
+&lt;/data&gt;</code></pre>
+<p>XSLT :</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+ 
+&lt;xsl:stylesheet version=&quot;2.0&quot; 
+        xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+        xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        &gt;
+  &lt;xsl:output
+      method=&quot;xml&quot;
+      indent=&quot;yes&quot;
+      standalone=&quot;no&quot;
+      doctype-public=&quot;-//W3C//DTD SVG 1.1//EN&quot;
+      doctype-system=&quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;
+      media-type=&quot;image/svg&quot; /&gt;
+ 
+  &lt;xsl:template match=&quot;data&quot;&gt;
+    &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;200&quot; height=&quot;200&quot; &gt;
+    &lt;xsl:for-each select=&quot;item&quot;&gt;
+      &lt;rect x=&quot;{12 * position()}&quot; y=&quot;{100 - .}&quot; width=&quot;4&quot; 
+        height=&quot;{.}&quot; fill=&quot;red&quot; stroke=&quot;black&quot;/&gt;  
+        &lt;/xsl:for-each&gt;
+    &lt;/svg&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</code></pre>
+
+<p>This creates 3 rectangles. New items introduced here are the <code>position()</code> function which is a numeric variable representing the current position of the <code>for-each</code> statement. We use it to move the rectangles along the X axis. The <code>y={100-.}</code> shows how to access the current node. The <code>.</code> means this item. It is used again for the <code>height</code> attribute. The data item value is subtracted from 100 for the y value since SVG starts at 0,0 and without defining the y coordinate the rectangles would be upside down.</p>
+<p>Reference URL : http://edutechwiki.unige.ch/en/XSLT_to_generate_SVG_tutorial</p>
+
+
+
+<h3 id="other-xslt-posts">Other XSLT posts ?</h3>
+<ul>
+<li><a href="basics.html">Basic structure of XSLT documents</a></li>
+
+<li><a href="invoice.html">How to display an invoice from XML sources</a></li>
+<li><a href="svg.html">Generate a SVG from XML data</a></li>
+</ul>
