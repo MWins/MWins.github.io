@@ -9,7 +9,7 @@
 <hr>
 
 <article>
-<h2 id="basics-of-xslt">Basics of XSLT</h2>
+<h3 id="basics-of-xslt">Basics of XSLT</h3>
 <p>XSLT documents are valid XML. XSLT requires an XML source document. Here’s a super, simple XML document :</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
 &lt;root/&gt;</code></pre>
@@ -24,25 +24,44 @@
       &lt;/xsl:template&gt;
       
 &lt;/xsl:stylesheet&gt;</code></pre>
-The actual transformation would be the conversion of <root> to
-<table>
-<p>. Not exciting. This is the only lame example used; the other examples will actually do something. Here’s what each part does :</p>
-<p>line 1 : XML doctype, note the encoding type differs from the XML file. The XSLT file’s encoding is what will be used for the generated document.</p>
-<p>line 2 : The actual XSL declaration. Version is set to 2.0. If you find XSL/XSLT documents on the internet check the version number, there’s some incompabilities between versions 1 and 2. The <code>xmlns:xsl</code> defines the <code>xsl</code> namespace IRI(Internationalized Resource Identifiers) . This works similiar to the doctype for HTML.</p>
-<p>line 3 : XSL directives are elements starting with XSL followed by the colon and the directive. This is namespacing the xml document to prevent collisions. The important part here is if you see a reference to a directive like <code>output</code> or <code>if</code>, these must be preceded by the &lt;xsl: . <code>xsl:output</code> tells the XSL processor the output to use. Some options are xml,html(xhtml), text. Note the html is not html5.</p>
-<p>line 4 : <code>xsl:template</code> starts the processing of the XML document. This is called a stylesheet module . A <code>name</code> attribute can be used to identify the stylesheet module. There can be multiple modules per XSLT document. The <code>match</code> attribute` defines a valid XPath expression. In this case the root node of the document. To effectively use XSLT, it will require some knowledge of XPath expressions.</p>
-<p>line 5: <code>&lt;table&gt;</code> this is actual output for each node matched by the expression. This tells it to replace the node with the table element.</p>
-<p>line * : Closes the <code>table</code> element, <code>xsl:template</code>, <code>xsl:stylesheet</code> tags and ends the program.</p>
+
+<p>The actual transformation would be the conversion of <root> to <table>. Not exciting.
+This is the only lame example used; the other examples will actually do something. Here’s what each part does :</p>
+
+<p>line 1 : XML doctype, note the encoding type differs from the XML file.
+The XSLT file’s encoding is what will be used for the generated document.</p>
+<p>line 2 : The actual XSL declaration. Version is set to 2.0. If you find XSL/XSLT documents
+on the internet check the version number, there’s some incompabilities between versions 1 and 2.
+The <code>xmlns:xsl</code> defines the <code>xsl</code> namespace IRI(Internationalized Resource Identifiers) . 
+This works similiar to the doctype for HTML.</p>
+<p>line 3 : XSL directives are elements starting with XSL followed by the colon and the directive.
+This is namespacing the xml document to prevent collisions. The important part here is if you see 
+a reference to a directive like <code>output</code> or <code>if</code>, these must be preceded by the &lt;xsl: .
+<code>xsl:output</code> tells the XSL processor the output to use. Some options are xml,html(xhtml), text.
+Note the html is not html5.</p>
+<p>line 4 : <code>xsl:template</code> starts the processing of the XML document. This is called a stylesheet module 
+. A <code>name</code> attribute can be used to identify the stylesheet module. There can be multiple modules 
+per XSLT document. The <code>match</code> attribute` defines a valid XPath expression. In this case the root node
+of the document. To effectively use XSLT, it will require some knowledge of XPath expressions.</p>
+<p>line 5: <code>&lt;table&gt;</code> this is actual output for each node matched by the expression. 
+This tells it to replace the node with the table element.</p>
+<p>line 5 : Closes the <code>table</code> element, <code>xsl:template</code>, <code>xsl:stylesheet</code> tags and ends 
+the program.</p>
 <p>You can test the above XML/XSLT online at this website : <a href="http://www.xmlper.com/">XSLT Online Test Tool</a></p>
-<p>Just enter the xml in the left hand textarea and the xslt in the right hand box and click ‘transform’ . The output should be a simple XML document with <code>&lt;table /&gt;</code> as the only element. (Note there must not be any spaces before the XML declaration.)</p>
+<p>Just enter the xml in the left hand textarea and the xslt in the right hand box and click ‘transform’ . The output
+should be a simple XML document with <code>&lt;table /&gt;</code> as the only element. (Note there must not be any
+spaces before the XML declaration.)</p>
 <h4 id="view-in-browser">View in browser</h4>
-<p>Another option would be to link the XSL file from the XML document and view it in the browser. Can view a sample file online : <a href="http://mwins.github.io/samples/glossary.xml">glossary sample XML/XSL file</a></p>
+<p>Another option would be to link the XSL file from the XML document and view it in the browser. Can view a sample
+file online : <a href="http://mwins.github.io/samples/glossary.xml">glossary sample XML/XSL file</a></p>
 <p>To add a stylesheet to an XML document add it to the XML document after the xml declaration:</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;name_of_xsl_file.xsl&quot;?&gt;`</code></pre>
-<p>Then load it in a modern browser. If you use the example above, it will be a blank page. View Source and it will show the <code>&lt;table /&gt;</code> tag as the only element.</p>
+<p>Then load it in a modern browser. If you use the example above, it will be a blank page. View Source and
+it will show the <code>&lt;table /&gt;</code> tag as the only element.</p>
 <p>Most of this is boilerplate code which is used to start an XSL document.</p>
-<p>If you wish to add a comment to an XSL file, use the standard XML comment formatting <code>&lt;!--  comment goes here --&gt;</code></p>
+<p>If you wish to add a comment to an XSL file, use the standard XML comment formatting 
+<code>&lt;!--  comment goes here --&gt;</code></p>
 </article>
 
 <hr />
