@@ -82,6 +82,8 @@ ul li { margin: .4em; list-style:none;}
 
 section blockquote p { margin: .4em; padding: .4em;  font-size: 1.1em; }
 section blockquote { background: rgba(255,255,0,.13) ; }
+
+footer { clear:both; width: 100%; }
 /* Forms */
 
 /* Media Queries */ 
