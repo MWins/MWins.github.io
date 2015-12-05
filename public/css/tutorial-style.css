@@ -16,9 +16,11 @@ h4 { font-size: 20px; border-bottom: 1px solid rgba(0,50,100,1);margin: .2em 0 ;
      display: block;
      clear: both;
 }
-article { width: 80%; max-width: 750px; margin: 0 auto; font-size: 1.05em;
+article { width: 80%; max-width: 750px; margin: 0 auto; font-size: 1.05em;line-height: 1.4; 
 }
 h1 a:link { font-size: 1.5em  ; }
+pre code { margin: .4em; background: rgba(255,0,0,.1); padding: .2em; display: block;}
+
 .col {
  
   display: block;
