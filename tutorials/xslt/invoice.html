@@ -1,0 +1,144 @@
+<!DOCTYPE html >
+<html>
+<head>
+<title> Introl to XLST </title>
+<link href="/public/tutorial-style.css" media="all" rel="stylesheet" >
+</head>
+<body>
+<h1> MWins </h1>
+<hr>
+
+
+<h2 id="using-xslt-to-generate-an-invoice">Using XSLT to generate an invoice</h2>
+<p><strong>Can use the <a href="http://www.xmlper.com/">XSLT Online Test Tool</a> for the examples</strong></p>
+<p>This is a practical example of using XSL with a basic XML document. The XML document will have a few sections under an invoice root element. Company, Client, and Lineitems are the child elements.</p>
+<pre><code>&lt;invoice&gt;
+    &lt;company&gt;
+        &lt;name&gt; ACME &lt;/name&gt;
+        &lt;contact&gt;W. Coyote &lt;/contact&gt;
+        &lt;email&gt;coyotewe@acme.com&lt;/email&gt;
+    &lt;/company&gt;
+    &lt;client&gt;
+        &lt;name&gt; E. Fudd &lt;/name&gt;
+        &lt;email&gt;efudd@domain.com&lt;/email&gt;
+        &lt;project&gt;Wabbit Capture&lt;/project&gt;
+    &lt;/client&gt;
+    &lt;lineitems&gt;
+        &lt;lineitem&gt;
+            &lt;description&gt; Hunting &lt;/description&gt;
+            &lt;quantity&gt;2&lt;/quantity&gt;
+            &lt;hourly&gt;100&lt;/hourly&gt;
+            &lt;total&gt;200&lt;/total&gt;
+         &lt;/lineitem&gt;
+        &lt;lineitem&gt;
+            &lt;description&gt; Tracking &lt;/description&gt;
+            &lt;quantity&gt;1&lt;/quantity&gt;
+            &lt;hourly&gt;100&lt;/hourly&gt;
+            &lt;total&gt;100&lt;/total&gt;
+         &lt;/lineitem&gt;
+    &lt;/lineitems&gt;
+&lt;/invoice&gt;</code></pre>
+<p>The XSLT document :</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+    &lt;xsl:output method=&quot;html&quot; indent=&quot;yes&quot;/&gt;
+
+      &lt;xsl:template match=&quot;/&quot;&gt;
+
+      &lt;/xsl:template&gt;      
+&lt;/xsl:stylesheet&gt;</code></pre>
+
+
+
+
+<p>Let’s start by getting the data from the XML file. The XSL will match all nodes under the root element (invoice). These can be echoed by using the xsl:value-of-select() element. The attribute is an XPath expression for a node.</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+            &lt;xsl:output method=&quot;html&quot; indent=&quot;yes&quot;/&gt;
+    
+          &lt;xsl:template match=&quot;/&quot;&gt;
+
+&lt;h2&gt;&lt;xsl:value-of select=&quot;//company/name&quot;/&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;xsl:value-of select=&quot;//company/contact&quot;/&gt;&lt;/h3&gt;
+          
+            
+          &lt;/xsl:template&gt;
+          
+    &lt;/xsl:stylesheet&gt;</code></pre>
+<p>The email field is to be displayed as an Anchor link. This requires some additional processing.</p>
+<pre><code>&lt;xsl:variable name=&quot;hyperlink&quot; select=&quot;//company/email&quot;/&gt;
+&lt;a href=&quot;mailto:{$hyperlink}&quot;&gt;&lt;xsl:text&gt; contact &lt;/xsl:text&gt;&lt;/a&gt;  </code></pre>
+<p>Two new elements introduced are <code>xsl:variable</code> and <code>xsl:text</code> . <code>xsl:text</code> is used to output plain text. Consider it the equivalent of echo or print in traditional programming languages. So far, only HTML elements have been added to the template. These do not require the xsl:text element. If text is placed inside of elements/tags, it does not need to use <code>xsl:text</code>. It is only required for bare text.</p>
+<p><code>xsl:variable</code> is how variables are assigned. The <code>name</code> attribute is required and the <code>select</code> attribute is optional. <code>xsl:value-of select=&quot;expression&quot;</code> could have been placed inside the <code>xsl:attribute</code> tag. Simpler to just use <code>select</code>. To use the variable, it must be enclosed in curly braces and start with a dollar sign. If the variable was not being assigned as an attribute of an element, it would have be required to use the<code>xsl:value-of select=&quot;$variable&quot;</code> format. Here’s an example :</p>
+<pre><code>   &lt;xsl:variable name=&quot;test&quot;&gt;FOO&lt;/xsl:variable&gt;
+   &lt;xsl:value-of select=&quot;$test&quot; /&gt;
+   
+   </code></pre>
+
+<p>Simple enough to replicate the same for the client section.</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+            &lt;xsl:output method=&quot;html&quot; indent=&quot;yes&quot;/&gt;
+    
+          &lt;xsl:template match=&quot;/&quot;&gt;
+
+&lt;h2&gt;&lt;xsl:value-of select=&quot;//company/name&quot;/&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;xsl:value-of select=&quot;//company/contact&quot;/&gt;&lt;/h3&gt;
+&lt;xsl:variable name=&quot;hyperlink&quot; select=&quot;//company/email&quot;/&gt;
+&lt;a href=&quot;mailto:{$hyperlink}&quot;&gt;&lt;xsl:text&gt; contact &lt;/xsl:text&gt;&lt;/a&gt;   
+
+&lt;h2&gt;&lt;xsl:value-of select=&quot;//client/project&quot;/&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;xsl:value-of select=&quot;//client/name&quot;/&gt;&lt;/h2&gt;
+&lt;xsl:variable name=&quot;clientemail&quot; select=&quot;//client/email&quot;/&gt;
+&lt;a href=&quot;mailto:{$clientemail}&quot;&gt;&lt;xsl:text&gt; email&lt;/xsl:text&gt;&lt;/a&gt;   
+       
+          &lt;/xsl:template&gt;
+          
+&lt;/xsl:stylesheet&gt;</code></pre>
+<p>For the line items we need to loop through the items to output each line. This introduces the <code>xsl:for-each</code> element.</p>
+<pre><code>&lt;table&gt;
+&lt;xsl:for-each select=&quot;//lineitems/lineitem&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt; &lt;xsl:value-of select=&quot;description&quot; /&gt;&lt;/td&gt;
+&lt;td&gt; &lt;xsl:value-of select=&quot;quantity&quot; /&gt;&lt;/td&gt;
+&lt;td&gt; &lt;xsl:value-of select=&quot;hourly&quot; /&gt;&lt;/td&gt;
+&lt;td&gt; &lt;xsl:value-of select=&quot;total&quot; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/xsl:for-each&gt;
+&lt;/table&gt;</code></pre>
+<p>To get a total we use <code>xsl:value-of</code> and set the <code>select</code> attribute to <code>sum(expression)</code> .</p>
+<pre><code> &lt;xsl:value-of select=&quot;sum(//lineitems/lineitem/total)&quot; /&gt; </code></pre>
+<p>The final table code :</p>
+<pre><code>&lt;table&gt;
+    &lt;xsl:for-each select=&quot;//lineitems/lineitem&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt; &lt;xsl:value-of select=&quot;description&quot; /&gt;&lt;/td&gt;
+        &lt;td&gt; &lt;xsl:value-of select=&quot;quantity&quot; /&gt;&lt;/td&gt;
+        &lt;td&gt; &lt;xsl:value-of select=&quot;hourly&quot; /&gt;&lt;/td&gt;
+        &lt;td&gt; &lt;xsl:value-of select=&quot;total&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;tr&gt;
+        &lt;td /&gt;
+        &lt;td&gt;&lt;xsl:text&gt;Total&lt;/xsl:text&gt; &lt;/td&gt;
+        &lt;td&gt;
+        &lt;xsl:value-of select=&quot;sum(//lineitems/lineitem/total)&quot; /&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;      </code></pre>
+<p>That completes the processing for the invoice. It’s just plain html and the layout isn’t particularly useful. Can add standard HTML tags and move the XSL elements to produce a much cleaner looking final document. CSS can be linked using <code>LINK</code> as usual.</p>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="index.html">Intro to XSLT</a></li>
+<li><a href="basics.html">Basic structure of XSLT documents</a></li>
+<li>How to display an invoice from XML sources</li>
+<li><a href="svg.html">Generate a SVG from XML data</a></li>
