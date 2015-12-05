@@ -9,9 +9,11 @@
 <hr>
 
 <article>
-<h2 id="using-xslt-to-generate-an-invoice">Using XSLT to generate an invoice</h2>
+<h3 id="using-xslt-to-generate-an-invoice">Using XSLT to generate an invoice</h3>
 <p><strong>Can use the <a href="http://www.xmlper.com/">XSLT Online Test Tool</a> for the examples</strong></p>
-<p>This is a practical example of using XSL with a basic XML document. The XML document will have a few sections under an invoice root element. Company, Client, and Lineitems are the child elements.</p>
+<p>This is a practical example of using XSL with a basic XML document. The XML document will have a few sections under 
+an invoice root element. Company, Client, and Lineitems are the child elements.</p>
+
 <pre><code>&lt;invoice&gt;
     &lt;company&gt;
         &lt;name&gt; ACME &lt;/name&gt;
@@ -51,7 +53,8 @@
 
 
 
-<p>Let’s start by getting the data from the XML file. The XSL will match all nodes under the root element (invoice). These can be echoed by using the xsl:value-of-select() element. The attribute is an XPath expression for a node.</p>
+<p>Let’s start by getting the data from the XML file. The XSL will match all nodes under the root element (invoice). 
+These can be echoed by using the xsl:value-of-select() element. The attribute is an XPath expression for a node.</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
     &lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
             &lt;xsl:output method=&quot;html&quot; indent=&quot;yes&quot;/&gt;
@@ -126,7 +129,9 @@
         &lt;/td&gt;
     &lt;/tr&gt;
 &lt;/table&gt;      </code></pre>
-<p>That completes the processing for the invoice. It’s just plain html and the layout isn’t particularly useful. Can add standard HTML tags and move the XSL elements to produce a much cleaner looking final document. CSS can be linked using <code>LINK</code> as usual.</p>
+<p>That completes the processing for the invoice. It’s just plain html and the layout isn’t particularly useful. 
+Can add standard HTML tags and move the XSL elements to produce a much cleaner looking final document. 
+CSS can be linked using <code>LINK</code> as usual.</p>
 
 
 </article>
