@@ -44,14 +44,9 @@
  <script>
   
   var currentdate = new Date(); 
-var datetime = "<h4>" + currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear() + " @ "  
-                + currentdate.getHours() + ":"  
-                + currentdate.getMinutes() + ":" 
-                + currentdate.getSeconds()
-                + "</h4>";
-                document.write(datetime)
+  var d = new Date();
+document.write(d.toLocaleString());
+
  </script>
  
 </section>
