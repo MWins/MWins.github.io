@@ -108,5 +108,10 @@ footer {
     clear: both;
     width: 100%;
 }
+.icon 
+{
+   width: 32px; heigth: 32px; 
+  
+}
 /* Forms */
 /* Media Queries */
