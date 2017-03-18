@@ -54,8 +54,7 @@ h4 {
 /* Navigation */
 
 nav {
-    overflow: hidden;
-  min-height: 100px;
+  min-height: 50px;
 }
 nav li {
     float: left;
