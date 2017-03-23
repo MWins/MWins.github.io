@@ -1,73 +1,5 @@
 
 
-    HTML
-    CSS
-    Javascript
-    Design
-    Content Management Systems
-    Etc.
-
-## Ruby 
-
-______________
-
-### General 
-
-Site -https://www.ruby-lang.org/en/
-
-Download - https://www.ruby-lang.org/en/downloads/
-
-Docs - http://ruby-doc.org/
-
-### Books 
- 
-[Why's (Poignant) Guide to Ruby] (http://mislav.uniqpath.com/poignant-guide/)
-
-### Tutorials
-
-[Odin Project Ruby](http://www.theodinproject.com/web-development-101/ruby-basics)
-
-[codecademy](https://www.codecademy.com/tracks/ruby)
-
-
-### Gems (libraries) 
-
-https://rubygems.org/
-
-### Frameworks 
-
-Rails (ROR) - http://rubyonrails.org/
-
-Rails Tutorial - http://guides.rubyonrails.org/getting_started.html
-
-
-
-Lotus - http://lotusrb.org/
-
-List of Additional Frameworks - https://www.ruby-toolbox.com/categories/web_app_frameworks
-
-### IDEs
-
-[RubyMine - $ ](https://www.jetbrains.com/ruby/)
-
-[NetBeans ](https://netbeans.org/features/ruby/index.html)
-
-[Aptana Studio](http://www.aptana.com/products/studio3.html) 
-
-
-### Misc
-
-Just looks useful : https://www.ruby-toolbox.com/
-
-Ruby Documentation Tool -http://yardoc.org/
-
-Setting up Ruby/MySQL on Windows -
-
-http://www.gamecreatures.com/blog/2011/08/31/installing-ruby-on-rails-with-mysql-on-windows/
-
-
-
-
 
 ## Wordpress
 
@@ -370,6 +302,92 @@ CoffeeScript - http://coffeescript.org/
 Mocha - http://visionmedia.github.io/mocha/
 
 jasmine - http://pivotal.github.io/jasmine/
+
+
+
+
+
+
+
+## Ruby 
+
+______________
+
+### General 
+
+Site -https://www.ruby-lang.org/en/
+
+Download - https://www.ruby-lang.org/en/downloads/
+
+Docs - http://ruby-doc.org/
+
+### Books 
+ 
+[Why's (Poignant) Guide to Ruby] (http://mislav.uniqpath.com/poignant-guide/)
+
+### Tutorials
+
+[Odin Project Ruby](http://www.theodinproject.com/web-development-101/ruby-basics)
+
+[codecademy](https://www.codecademy.com/tracks/ruby)
+
+
+### Gems (libraries) 
+
+https://rubygems.org/
+
+### Frameworks 
+
+Rails (ROR) - http://rubyonrails.org/
+
+Rails Tutorial - http://guides.rubyonrails.org/getting_started.html
+
+
+
+Lotus - http://lotusrb.org/
+
+List of Additional Frameworks - https://www.ruby-toolbox.com/categories/web_app_frameworks
+
+### IDEs
+
+[RubyMine - $ ](https://www.jetbrains.com/ruby/)
+
+[NetBeans ](https://netbeans.org/features/ruby/index.html)
+
+[Aptana Studio](http://www.aptana.com/products/studio3.html) 
+
+
+### Misc
+
+Just looks useful : https://www.ruby-toolbox.com/
+
+Ruby Documentation Tool -http://yardoc.org/
+
+Setting up Ruby/MySQL on Windows -
+
+http://www.gamecreatures.com/blog/2011/08/31/installing-ruby-on-rails-with-mysql-on-windows/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
