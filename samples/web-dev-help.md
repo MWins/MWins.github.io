@@ -512,7 +512,7 @@ Ruby uses RubyGems for package management and is included with Ruby.
 [PNGCrush](http://pmt.sourceforge.net/pngcrush/)
 
 
-##PHP
+# PHP
 ----------------
 
 PHP is  a server side scripting language. It can be used as a general purpose scripting language too. 
