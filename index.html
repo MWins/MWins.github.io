@@ -48,7 +48,7 @@ document.write("<h4>" + d.toLocaleString() + "</h4>");
 	day : 'numeric',
 	month : 'short',
 	year : 'numeric'
-}) + ' - '  + d.getDay());
+}) + d.toLocaleTimeString() + ' - '  + d.getDay());
   timeUI.appendChild(txt);
   
   document.getElementById('now').appendChild(timeUI);
