@@ -44,7 +44,11 @@
 document.write("<h4>" + d.toLocaleString() + "</h4>");
   var timeUI = document.createElement('h4');
   
-  txt = document.createTextNode(d.toLocaleString() + ' - '  + d.getDay());
+  txt = document.createTextNode(d.toLocaleString('en-GB', {  
+	day : 'numeric',
+	month : 'short',
+	year : 'numeric'
+}) + ' - '  + d.getDay());
   timeUI.appendChild(txt);
   
   document.getElementById('now').appendChild(timeUI);
