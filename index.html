@@ -47,7 +47,9 @@ document.write("<h4>" + d.toLocaleString() + "</h4>");
   txt = document.createTextNode(d.toLocaleString('en-GB', {  
 	day : 'numeric',
 	month : 'short',
-	year : 'numeric'
+	year : 'numeric',
+	hour: '2-digit',
+	minute: '2-digit',
 }) + ' ' + d.toLocaleTimeString() + ' - '  + d.getDay());
   timeUI.appendChild(txt);
   
