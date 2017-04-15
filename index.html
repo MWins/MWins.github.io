@@ -42,6 +42,12 @@
  <script>
   var d = new Date();
 document.write("<h4>" + d.toLocaleString() + "</h4>");
+  var timeUI = document.createElement('h4');
+  
+  txt = document.createTextNode(d.toLocaleString());
+  timeUI.appendChild(txt);
+  
+  document.currentScript.appendChild(timeUI);
  </script>
  </section> 
  
@@ -53,16 +59,12 @@ document.write("<h4>" + d.toLocaleString() + "</h4>");
  </section>
  
  <section>
-  <h3> PHP - 2 explore</h3>
+  <h3> PHP - to explore</h3>
   <ul>
   <li><a href="https://github.com/atk4/ui"> Web Component Framework written in PHP </a> </li>
-   <li><a href="https://packagist.org/packages/atk4/ui"> Packagist -Web Component Framework written in PHP </a> </li>
-    <li><a href="https://packagist.org/packages/panda/ui"> panda/ui - Packagist</a> </li>
    <li><a href="https://www.mediawiki.org/wiki/OOjs_UI"> OOjs UI - MediaWiki</a> </li>
-
 <li><a href="https://packagist.org/packages/knplabs/knp-menu"> knplabs/knp-menu - Packagist</a> </li>
  <li><a href="http://www.phpspec.net/en/stable/"> phpspec</a> </li>
- <li><a href="https://packagist.org/packages/sensio/generator-bundle"> sensio/generator-bundle - Packagist</a> </li>
   </ul>
  </section>
  
