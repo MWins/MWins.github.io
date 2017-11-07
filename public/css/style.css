@@ -23,7 +23,7 @@ h4 {
 /* Layout */
 
 .page {
-    width: 80%;
+    width: 85%;
     margin: 0em auto;
     overflow: hidden;
     display: block;
@@ -117,3 +117,15 @@ footer {
 .icon-btn { background: rgba(0,50,100,.2); padding:  .3em; margin: .3em; display: inline-block; border: 1px solid rgba(0,50,100,.1); }
 /* Forms */
 /* Media Queries */
+
+
+
+
+dt { margin: .3rem; font-size: 1.2rem; font-weight: bold; 
+}
+
+dd { margin-left: .5rem; }
+
+
+
+
